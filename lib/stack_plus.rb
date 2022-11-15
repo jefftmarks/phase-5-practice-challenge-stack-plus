@@ -1,17 +1,26 @@
+require 'pry'
+
 class StackPlus
+	attr_reader :stack
+
   def initialize
-    # your code here
+    @stack = [];
   end
 
   def push(value)
-    # your code here
+    self.stack.push(value);
   end
 
   def pop
-    # your code here
+    value = stack.pop
+		return value ? value : -1
   end
 
   def increment(n)
-    # your code here
+    i = 0
+		while self.stack[i] && i < n
+			self.stack[i] += 1
+			i += 1
+		end
   end
 end
